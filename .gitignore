@@ -1,24 +1,40 @@
-# Environment variables
+# Environment variables (CRITICAL - contains secrets!)
 .env
 .env.local
 .env.production
 .env.staging
+.env.development
+.env.test
 
 # Python cache and bytecode
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
 
-# Airflow specific
+# Airflow specific files
 logs/
 airflow.cfg
 airflow.db
 webserver_config.py
+standalone_admin_password.txt
+airflow-webserver.pid
+airflow-scheduler.pid
 
 # Database files
 *.db
 *.sqlite3
+*.sqlite
+
+# Docker specific
+.dockerignore
+docker-compose.override.yml
+.docker/
 
 # IDE and editor files
 .vscode/
@@ -26,6 +42,8 @@ webserver_config.py
 *.swp
 *.swo
 *~
+.project
+.pydevproject
 
 # OS generated files
 .DS_Store
@@ -35,6 +53,62 @@ webserver_config.py
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Docker volumes and data
-docker-compose.override.yml
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Logs
+*.log
+logs/
+log/
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Security and credentials
+secrets/
+credentials/
+keys/
+certificates/
+*.pem
+*.key
+*.crt
+
+# Data files (if you don't want to track large datasets)
+data/
+*.csv
+*.json
+*.parquet
+*.xlsx
+
+# Configuration files with sensitive data
+config.ini
+settings.ini
+local_settings.py
